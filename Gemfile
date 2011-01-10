@@ -1,2 +1,2 @@
 source :rubygems
-gem 'tumblr'
+gem 'tumblr-rb', :require => 'tumblr'
