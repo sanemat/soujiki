@@ -1,9 +1,11 @@
 # coding: utf-8
-unless ENV['TUMBLR_URL']
+if !ENV['TUMBLR_MAIL'] or !ENV['TUMBLR_PASSWORD']
   require 'pit'
-  ENV["EDITOR"] ||= "vim"
+  ENV['EDITOR'] ||= 'vim'
   config = Pit.get('tumblr', :require => {
-    "url" => "your tumblr email:your tumblr password"
+    'mail' => 'your tumblr email',
+    'password' => 'your tumblr password'
   })
-  ENV['TUMBLR_URL'] = config['url']
+  ENV['TUMBLR_MAIL'] = config['mail']
+  ENV['TUMBLR_PASSWORD'] = config['password']
 end
