@@ -1,5 +1,5 @@
 # coding: utf-8
-ENV['TUMBLR_URL'] ||= do
+unless ENV['TUMBLR_URL']
   require 'pit'
-  Pit.get('tumblr')['url']
+  ENV['TUMBLR_URL'] = Pit.get('tumblr')['url']
 end
